@@ -1,0 +1,63 @@
+% Hechos para los signos del zodiaco
+horoscopo(aries, 21, 3, 20, 4).
+horoscopo(tauro, 21, 4, 20, 5).
+horoscopo(geminis, 21, 5, 20, 6).
+horoscopo(cancer, 21, 6, 20, 7).
+horoscopo(leo, 21, 7, 20, 8).
+horoscopo(virgo, 21, 8, 20, 9).
+horoscopo(libra, 21, 9, 20, 10).
+horoscopo(escorpio, 21, 10, 20, 11).
+horoscopo(sagitario, 21, 11, 20, 12).
+horoscopo(capricornio, 21, 12, 20, 1).
+horoscopo(acuario, 21, 1, 19, 2).
+horoscopo(piscis, 20, 2, 20, 3).
+
+% Hechos para los elementos
+elemento(aries, fuego).
+elemento(leo, fuego).
+elemento(sagitario, fuego).
+elemento(tauro, tierra).
+elemento(virgo, tierra).
+elemento(capricornio, tierra).
+elemento(geminis, aire).
+elemento(libra, aire).
+elemento(acuario, aire).
+elemento(cancer, agua).
+elemento(escorpio, agua).
+elemento(piscis, agua).
+
+% Reglas para la modalidad de los signos
+modalidad(aries, cardinal).
+modalidad(leo, fijo).
+modalidad(sagitario, mutable).
+
+modalidad(tauro, fijo).
+modalidad(virgo, mutable).
+modalidad(capricornio, cardinal).
+
+modalidad(geminis, mutable).
+modalidad(libra, cardinal).
+modalidad(acuario, fijo).
+
+modalidad(cancer, cardinal).
+modalidad(escorpio, fijo).
+modalidad(piscis, mutable).
+
+% Preguntas
+%1.Preguntar el elemento y la modalidad de un signo del zodiaco
+%?- elemento(aries, Elemento), modalidad(aries, Modalidad),
+%	write("El signo es "), write(aries),
+%	write(" elemento "), write(Elemento),
+%	write(" y modalidad "), write(Modalidad), write(".").
+%2.Encontrar todos los signos asociados a un elemento
+%?- elemento(Signo, fuego), write("El signo "),
+%	write(Signo), write(" es de elemento fuego."), nl, fail.
+%3.Encontrar todos los signos asociados a una modalidad
+%?- modalidad(Signo, cardinal), write("El signo "),
+%	write(Signo), write(" tiene modalidad cardinal."), nl, fail.
+%4.Determinar el signo del zodiaco de una persona nacida en una fecha determinada
+%?- FechaNacimientoDia = 21, FechaNacimientoMes = 4,
+%	horoscopo(Signo, DiaInicio, MesInicio, DiaFin, MesFin),
+%	((FechaNacimientoMes = MesInicio, FechaNacimientoDia >= DiaInicio);
+%	(FechaNacimientoMes = MesFin, FechaNacimientoDia =< DiaFin)),
+%	write("Tu signo del zodiaco es "), write(Signo), write(".").
